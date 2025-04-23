@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Bundle with Popper --><script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+      body {
+            font-family: sans-serif;
+            background-color: #f8f8f8;
+        }
+        h1{
+            text-align: center;
+            color: #210457;
+           padding-top: 30px;
+        }
+
+        .cards-container-b1 {
+            display: flex;
+
+            justify-content: space-around;
+            margin: 20px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card-boys-1 {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(10, 3, 105, 0.1);
+            overflow: hidden;
+            width: 315px;
+            text-align: center;
+            transition: transform 0.3s;
+            margin-top: 40px;
+            height: 480px;
+        }
+
+        .card-boys-1 img {
+            width: 102%;
+            height: 300px;
+            /* object-fit: contain; */
+        }
+
+        .card-content-b1 {
+            padding: 15px;
+        }
+
+        .card-boys-1 h3 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .card-boys-1 p {
+            font-size: 16px;
+            color: #210457;
+            margin-bottom: 20px;
+        }
+
+        .card-boys-1 .btn {
+            text-decoration: none;
+            background-color: #21044e;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .card-boys-1 .btn:hover {
+            background-color: #ff6347;
+            color: white;
+        }
+
+
+        .card-boys-1:hover {
+            transform: scale(1.05);
+        }
+    .tab-navigation {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    /* body {} */
+
+    .tab-btn {
+      padding: 0.75rem 1.5rem;
+      background: #f8f9fa;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    .tab-btn:hover {
+      background: #e9ecef;
+    }
+
+    .tab-btn.active {
+      background: #11015a;
+      color: white;
+    }
+
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .grid-item {
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 1/1;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .grid-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .grid-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .grid-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .image-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(8, 4, 4, 0.8), transparent);
+      color: white;
+      padding: 1.5rem;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .grid-item:hover .image-overlay {
+      transform: translateY(0);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    footer.custom-footer {
+      background-color: #100153;
+      /* Custom background */
+      color: #f8f9fa;
+      /* Light text */
+      margin-top: 50px;
+      margin-bottom: 0px;
+      /* Top margin */
+    }
+
+    footer.custom-footer a {
+      color: #f8f9fa;
+      /* Link text color */
+      text-decoration: none;
+    }
+
+    footer.custom-footer a:hover {
+       color: #ff6347;
+      /* Yellow on hover */
+    }
+ 
+        /* General */
+        h2,
+        h5 {
+          color: #22068a;
+          /* Deep blue headings */
+        }
+  
+        p,
+        blockquote {
+            color: #22068a;
+          /* Dark text for readability */
+        }
+  
+        /* Sale Marquee */
+        .sale-banner {
+          background-color: #110353 !important;
+          color: #14045e;
+          font-weight: bold;
+          margin-top: 4px;
+        }
+  
+        /* Why Choose Us Section */
+        .why-choose-us {
+          background-color: #f2f2f2;
+          color: #003366;
+        }
+  
+        .why-choose-us i {
+          color: #2f005a;
+        }
+  
+        /* Featured Products Section */
+        .featured-section {
+          background-color: #ffffff;
+          color: #003366;
+        }
+  
+        .featured-section h5 {
+          color: #1f0066;
+        }
+  
+        /* Testimonials Section */
+        .testimonials {
+          background-color: #20034e;
+          /* Light blue */
+          color: #003366;
+        }
+  
+        .testimonials blockquote {
+          font-style: italic;
+          color: #020750;
+        }
+  
+        .blockquote-footer {
+          color: #05010e;
+        }
+  
+        /* Footer (if not already styled) */
+        .custom-footer {
+          background-color: #003366;
+          color: #f8f9fa;
+        }
+  
+        .custom-footer a {
+          color: #f8f9fa;
+        }
+  
+        .custom-footer a:hover {
+          color: #f8f9fa;
+        }
+
+        .navbar-toggler-icon {
+       color: #FFFFFF; /* White icon */
+          filter: invert(1); /* Ensures the icon color is white */
+        }
+      </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      const tabContents = document.querySelectorAll('.tab-content');
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Remove active class from all buttons and contents
+          tabBtns.forEach(b => b.classList.remove('active'));
+          tabContents.forEach(content => content.classList.remove('active'));
+
+          // Add active class to clicked button and corresponding content
+          btn.classList.add('active');
+          const tabId = btn.getAttribute('data-tab');
+          document.getElementById(tabId).classList.add('active');
+        });
+      });
+    });
+  </script>
+</head>
+
+<body>
+    <header class="bg-white shadow-sm">
+        <nav class="navbar navbar-expand-lg py-3" style="background-color: #210457;">
+          <div class="container-fluid">
+            <a class="navbar-brand text-uppercase fw-bold" href="#" style="color: #FFFFFF;">A-1 UNIFORMS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+             data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" 
+             aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+      
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html" style="color: #FFFFFF;">Home</a>
+                </li>
+      
+                <!-- Girls Uniform Dropdown -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="girlsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #FFFFFF;">
+                    Girls Uniform
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="girlsDropdown">
+                    <li><a class="dropdown-item" href="shirtsg.html">Girls Shirt</a></li>
+                    <li><a class="dropdown-item" href="tousersg.html">Girls Trousers</a></li>
+                    <li><a class="dropdown-item" href="skirtsg.html">Girls Skirts</a></li>
+                  </ul>
+                </li>
+      
+                <!-- Boys Uniform Dropdown -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="boysDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #FFFFFF;">
+                    Boys Uniform
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="boysDropdown">
+                    <li><a class="dropdown-item" href="pentB.html">Boys Pants</a></li>
+                    <li><a class="dropdown-item" href="trouserB.html">Boys Trousers</a></li>
+                    <li><a class="dropdown-item" href="shirtsB.html">Boys Shirts</a></li>
+                  </ul>
+                </li>
+      
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html" style="color: #FFFFFF;">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html" style="color: #FFFFFF;">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="sitemap.html" style="color: #FFFFFF;">Site Map</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      
+  
+  
+
+  <div class="container mt-4">
+    <div id="imageSlider" class="carousel slide" data-bs-ride="carousel">
+      
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#imageSlider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#imageSlider" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#imageSlider" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+  
+      <!-- Carousel Items -->
+      <div class="carousel-inner rounded shadow-sm">
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <img src="coverpic1.jpg" class="d-block w-100" alt="Uniform Promo 1" style="object-fit: cover; height: 450px;">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="fw-bold" style="color: #f8f8f8;">ALL TYPE OF UNIFORMS AVAILABLE</h5>
+            <p style="color: #c7c0d8;">SCROLL DOWN AND BOOK YOUR ORDER</p>
+          </div>
+        </div>
+  
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <img src="coverpic2.jpg" class="d-block w-100" alt="Uniform Promo 2" style="object-fit: cover; height: 450px;">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="fw-bold" style="color: #f8f8f8;">BEST FABRIC MATERIAL EVER</h5>
+            <p style="color: #c7c0d8;">SCROLL DOWN AND BOOK YOUR ORDER NOW</p>
+          </div>
+        </div>
+  
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <img src="coverpic3.jpg" class="d-block w-100" alt="Uniform Promo 3" style="object-fit: cover; height: 450px;">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="fw-bold" style="color: #f8f8f8;">CUSTOMIZED UP TO YOUR CHOICE</h5>
+            <p style="color: #c7c0d8;">SCROLL DOWN AND BOOK YOUR ORDER NOW</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#imageSlider" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#imageSlider" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  
+
+  <div class="container py-5">
+    <h2 class="text-center mb-4">WELCOME TO A1 UNIFORMS</h2>
+  
+    <!-- Tab Navigation -->
+    <div class="d-flex justify-content-center mb-4">
+      <button class="tab-btn active btn btn-outline mx-2" data-tab="nature">GIRLS</button>
+      <button class="tab-btn btn btn-outline mx-2" data-tab="architecture">BOYS</button>
+    </div>
+  
+    <!-- Girls Tab -->
+    <div class="tab-content active" id="nature">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="grid-item">
+            <a href="shirtsg.html">
+              <img src="shirt1.jpg" alt="Girls Shirt" class="img-fluid rounded">
+            </a>
+            <div class="image-overlay">
+              <h5>Girls's Shirts</h5>
+              <p class="mb-0">Premium shirt quality</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="grid-item">
+            <a href="tousersg.html">
+              <img src="trowser1.jpg" alt="Girls Trousers" class="img-fluid rounded">
+            </a>
+            <div class="image-overlay">
+              <h5>Girls's Trousers</h5>
+              <p class="mb-0">Premium quality trousers</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="grid-item">
+            <a href="skirtsg.html">
+              <img src="skirts1.jpg" alt="Girls Skirts" class="img-fluid rounded">
+            </a>
+            <div class="image-overlay">
+              <h5>Girls's Skirts</h5>
+              <p class="mb-0">Premium quality skirts</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Boys Tab -->
+    <div class="tab-content" id="architecture">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="grid-item">
+            <a href="shirtsB.html">
+              <img src="shirtb1.jpg" alt="Boys Shirt" class="img-fluid rounded">
+            </a>
+            <div class="image-overlay">
+              <h5>Boys Shirt</h5>
+              <p class="mb-0">Premium quality shirts</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="grid-item">
+            <a href="trouserB.html">
+              <img src="trowserb1.jpg" alt="Boys Trousers" class="img-fluid rounded">
+            </a>
+            <div class="image-overlay">
+              <h5>Boys Trousers</h5>
+              <p class="mb-0">Premium quality trousers</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="grid-item">
+            <a href="pentB.html">
+              <img src="pentsb1.avif" alt="Boys Pants" class="img-fluid rounded">
+            </a>
+            <div class="image-overlay">
+              <h5>Boys Pants</h5>
+              <p class="mb-0">Premium quality pants</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Sale Banner -->
+    <div class="bg-primary text-light py-2 mt-5">
+      <marquee behavior="scroll" direction="left" scrollamount="6">
+        SALE! Up to 50% OFF on selected school uniforms — Limited Time Offer! Shop Now at A1 Uniform!
+      </marquee>
+    </div>
+  
+
+<div class="row">
+    <h2 class="text-center mt-4">Our Best Selling Products</h2>
+    <section class="cards-container-b1">
+     
+  
+        <div class="card-boys-1">
+            <img src= "boysuniforms/pents 1.jpeg"alt="pent 1">
+            <h3>Generation School </h3>
+           
+            <p>RS 1499</p>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+        <div class="card-boys-1">
+            <img src= "boysuniforms/pents 2.jpeg"alt="Pent 2">
+            <h3>St. Michael School </h3>
+          
+            <p>RS 1250</p>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+        <div class="card-boys-1">
+            <img src="boysuniforms/pents 3.jpeg" alt="Pent 3">
+            <h3>Cedar School  </h3>
+         
+            <p> RS 1399</p>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+        
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+              <!-- Skirt 1 -->
+              <div class="col">
+                  <div class="card-boys-1">
+                      <img src="girlsunifrom/skirtg1.png" alt="skirt 1">
+                      <div class="card-content-b1 text-center">
+                          <h5>Green Plaid School Skirt</h5>
+                          <!-- <p>Classic School Skirt</p> -->
+                          <p>RS 750</p>
+                          <a href="#" class="btn">Shop Now</a>
+                      </div>
+                  </div>
+              </div>
+              <!-- Skirt 2 -->
+              <div class="col">
+                  <div class="card-boys-1">
+                      <img src="girlsunifrom/skirtg2.jpg" alt="skirt 2">
+                      <div class="card-content-b1 text-center">
+                          <h5>Blue Pleated School Skirt</h5>
+                          <!-- <p>Stylish Pleated Skirt</p> -->
+                          <p>RS 780</p>
+                          <a href="#" class="btn">Shop Now</a>
+                      </div>
+                  </div>
+              </div>
+              <!-- Skirt 3 -->
+              <div class="col">
+                  <div class="card-boys-1">
+                      <img src="girlsunifrom/skirtg3.png" alt="skirt 3">
+                      <div class="card-content-b1 text-center">
+                          <h5>Red School Skirt</h5>
+                          <!-- <p>Comfortable Skirt</p> -->
+                          <p>RS 820</p>
+                          <a href="#" class="btn">Shop Now</a>
+                      </div>
+                  </div>
+              </div>
+        </section>
+    </div>
+  
+        
+      <section class="bg-light py-5">
+        <div class="container text-center">
+          <h2 class="text-primary mb-4">What Our Customers Say</h2>
+          <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <blockquote class="blockquote">
+                  <p class="mb-4">“The quality is amazing and delivery was fast. My kids love the new uniforms!”</p>
+                  <footer class="blockquote-footer">Sana Khan</footer>
+                </blockquote>
+              </div>
+              <div class="carousel-item">
+                <blockquote class="blockquote">
+                  <p class="mb-4">“Great fit and comfortable for all-day school wear. Highly recommended!”</p>
+                  <footer class="blockquote-footer">Ali Raza</footer>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="bg-light py-5">
+        <div class="container text-center border box-shadow">
+          <h2 class="mb-4 text-primary">Why Choose A1 Uniform?</h2>
+          <div class="row">
+            <div class="col-md-3">
+              <i class="fas fa-check-circle fa-2x text-warning mb-2"></i>
+              <h5>Premium Quality</h5>
+              <p>Soft & durable fabric for all seasons.</p>
+            </div>
+            <div class="col-md-3">
+              <i class="fas fa-tags fa-2x text-warning mb-2"></i>
+              <h5>Affordable Prices</h5>
+              <p>Best value for school wear.</p>
+            </div>
+            <div class="col-md-3">
+              <i class="fas fa-shipping-fast fa-2x text-warning mb-2"></i>
+              <h5>Fast Delivery</h5>
+              <p>Quick delivery to your doorstep.</p>
+            </div>
+            <div class="col-md-3">
+              <i class="fas fa-headset fa-2x text-warning mb-2"></i>
+              <h5>Customer Support</h5>
+              <p>We’re here to help you anytime.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+    <!-- Testimonials Section -->
+    <section class="bg-light py-5 border box-shadow">
+      <div class="container text-center">
+        <h2 class="text-primary mb-4">What Our Customers Say</h2>
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <blockquote class="blockquote">
+                <p class="mb-4">“The quality is amazing and delivery was fast. My kids love the new uniforms!”</p>
+                <footer class="blockquote-footer">Sana Khan</footer>
+              </blockquote>
+            </div>
+            <div class="carousel-item">
+              <blockquote class="blockquote">
+                <p class="mb-4">“Great fit and comfortable for all-day school wear. Highly recommended!”</p>
+                <footer class="blockquote-footer">Ali Raza</footer>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Why Choose Us Section -->
+    <section class="bg-light py-5">
+      <div class="container text-center">
+        <h2 class="mb-4 text-primary">Why Choose A1 Uniform?</h2>
+        <div class="row">
+          <div class="col-md-3">
+            <i class="fas fa-check-circle fa-2x text-warning mb-2"></i>
+            <h5>Premium Quality</h5>
+            <p>Soft & durable fabric for all seasons.</p>
+          </div>
+          <div class="col-md-3">
+            <i class="fas fa-tags fa-2x text-warning mb-2"></i>
+            <h5>Affordable Prices</h5>
+            <p>Best value for school wear.</p>
+          </div>
+          <div class="col-md-3">
+            <i class="fas fa-shipping-fast fa-2x text-warning mb-2"></i>
+            <h5>Fast Delivery</h5>
+            <p>Quick delivery to your doorstep.</p>
+          </div>
+          <div class="col-md-3">
+            <i class="fas fa-headset fa-2x text-warning mb-2"></i>
+            <h5>Customer Support</h5>
+            <p>We’re here to help you anytime.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Footer Section -->
+    <footer class="custom-footer pt-5 pb-4 w-100 px-5">
+      <div class="text-md-left">
+        <div class="row text-md-left">
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">A1 Uniform</h5>
+            <p class="text-light"> Quality school uniforms for girls and boys. We provide premium fabric and stylish designs to keep students comfortable and presentable.</p>
+          </div>
+  
+          <!-- Links Section -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Girls</h5>
+            <p><a href="#">Shirts</a></p>
+            <p><a href="#">Trousers</a></p>
+            <p><a href="#">Skirts</a></p>
+          </div>
+  
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Boys</h5>
+            <p><a href="#">Shirts</a></p>
+            <p><a href="#">Trousers</a></p>
+            <p><a href="#">Pant Shirts</a></p>
+          </div>
+  
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 text-light">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Our Company</h5>
+            <p><a href="about.html">About</a></p>
+            <p><a href="contact.html">Contact Us</a></p>
+            <p><a href="term.html">Terms & Conditions</a></p>
+            <p><a href="sitemap.html">Sitemap</a></p>
+          </div>
+  
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3 text-light">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contact</h5>
+            <p class="text-light"><i class="fas fa-home me-3 "></i> Your Address, City, Country</p>
+            <p class="text-light"><i class="fas fa-envelope me-3"></i> info@a1uniform.com</p>
+            <p class="text-light"><i class="fas fa-phone me-3"></i> +92 300 0000000</p>
+          </div>
+        </div>
+  
+        <hr class="mb-4">
+  
+        <div class="row align-items-center">
+          <div class="col-md-7 col-lg-8">
+            <p class="text-light">© 2025 A1 Uniform. All rights reserved.</p>
+          </div>
+          <div class="col-md-5 col-lg-4 text-light">
+            <div class="text-center text-md-right">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  
+</body>
+
+</html>
